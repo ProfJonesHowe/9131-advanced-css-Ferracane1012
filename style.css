@@ -1,0 +1,257 @@
+* {box-sizing: border-box;}
+
+
+html, body
+{ 
+
+background: #00FFFF;
+font-family:Helvetica;
+margin: 10;
+padding: 10;
+
+}
+
+@media (min-width: 700px)
+{
+body {padding: 2rem; }
+form {max-width: 600px; }
+}
+
+*, *::before, *::after
+{
+box-sizing: border-box;
+}
+html, body
+{
+margin: 0;
+padding: 0;
+}
+
+font-family: system-ui, sans-serif;
+background: #0b0e14;
+color: #e6edf3;
+}
+/* Color and design variables */
+:root {
+--primary: #4f9cff; /* Accent blue color */
+--text: #e6edf3; /* Light text color */
+}
+/* Header layout */
+.site-header
+{
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #111624;
+padding: 0.75rem 1rem;
+position: sticky;
+top: 0;
+}
+
+/* Logo styling */
+.logo
+{
+color: var(--text);
+text-decoration: none;
+font-weight: bold;
+}
+/* Navigation links */
+.site-nav ul
+{
+list-style: none;
+display: flex;
+gap: 1rem;
+}
+.site-nav a
+{
+text-decoration: none;
+color: var(--text);
+padding: 0.5rem 0.75rem;
+border-radius: 8px;
+transition: background 0.3s;
+}
+/* Hover and active link styles */
+.site-nav a:hover,
+.site-nav a.active
+{
+background: var(--primary);
+color: #000;
+}
+
+/* Hide the menu checkbox by default */
+.menu-toggle {
+display: none;
+}
+/* The hamburger button */
+.menu-btn {
+display: none;
+font-size: 2rem;
+color: var(--text);
+cursor: pointer;
+user-select: none;
+}
+
+/* Mobile styles — everything under 768 px wide */
+@media (max-width: 768px) {
+/* Show the menu button on small screens */
+.menu-btn {
+display: block;
+}
+/* Stack the navigation vertically and hide it by default
+*/
+.site-nav ul {
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 0;
+4
+background: #111624;
+width: 200px;
+padding: 1rem;
+border-radius: 8px;
+display: none;
+}
+/* When the checkbox is checked, show the menu */
+.menu-toggle:checked + .menu-btn + .site-nav ul {
+	display: flex;
+}
+}
+/* Hide the menu checkbox by default */
+.menu-toggle
+{
+display: none;
+}
+• This is the hidden checkbox from your HTML. It’s invisible but tracks whether
+the menu is open or closed.
+3. We will figure out how to toggle the menu.
+/* The hamburger button */
+.menu-btn
+{
+display: none;
+font-size: 2rem;
+color: var(--text);
+cursor: pointer;
+user-select: none;
+}
+
+/* Mobile styles — everything under 768 px wide */
+@media (max-width: 768px)
+{
+• This media query tells the browser to apply these styles only when the screen
+width is 768 pixels or smaller (typical tablets and phones).
+5. Now we can identify what smaller screens will see.
+/* Show the menu button on small screens */
+.menu-btn
+{
+display: block;
+}
+/* Stack the navigation vertically and hide it by default */
+.site-nav ul
+3
+{
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 0;
+background: #111624;
+width: 200px;
+padding: 1rem;
+border-radius: 8px;
+display: none;
+}
+• .site-nav ul inside the media query
+• Changes the nav layout from a horizontal row to a vertical list.
+• Positions it to slide down below the header.
+/* When the checkbox is checked, show the menu */
+.menu-toggle:checked + .menu-btn + .site-nav ul
+{
+display: flex;
+}
+• Uses the “checkbox hack.”
+• When the checkbox is checked, this selector targets the menu and sets display:
+flex, so the menu appears.
+
+/* Reset and setup */
+*, *::before, *::after
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+• Removes default margins and padding from all elements. This ensures that
+your layout appears the same across all browsers.
+• Try changing the numbers to see the different effects
+3. Add the following text:
+body
+{
+font-family: system-ui, sans-serif;
+background: #0b0e14;
+color: #e6edf3;
+}
+• Sets a dark background (#0b0e14) and light text (#e6edf3). The system-
+ui font matches the operating system’s default typeface, keeping text
+readable.
+• Try playing with colors to see the different effects
+4. Next, we will define some variables:
+/* Color and design variables */
+:root
+{
+--primary: #4f9cff; /* Accent blue color */
+--text: #e6edf3; /* Light text color */
+}
+• Variables like --primary and --text make color changes easy later. You can
+reuse them throughout your CSS.
+2
+5. We can make some visual changes to the header
+/* Header layout */
+.site-header
+{
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #111624;
+padding: 0.75rem 1rem;
+position: sticky;
+top: 0;
+}
+• display: flex puts the logo and navigation side by side.
+• justify-content: space-between pushes them to opposite sides.
+• position: sticky; top: 0; keeps the header visible while scrolling.
+6. We can style the Logo now.
+/* Logo styling */
+.logo
+{
+color: var(--text);
+text-decoration: none;
+font-weight: bold;
+}
+• Makes the logo bold and maintains consistency with the color theme.
+•
+7. We’ll make some changes to the navigation menu.
+/* Navigation links */
+.site-nav ul
+{
+list-style: none;
+display: flex;
+gap: 1rem;
+}
+.site-nav a
+{
+text-decoration: none;
+color: var(--text);
+padding: 0.5rem 0.75rem;
+border-radius: 8px;
+transition: background 0.3s;
+}
+• The unordered list (ul) uses display: flex to arrange links
+horizontally.
+3
+The gap property adds space between each link.
+8. Finally, we will make some changes to the hover command
+/* Hover and active link styles */
+.site-nav a:hover,
+.site-nav a.active
+{
+background: var(--primary);
+color: #000;
+}
